@@ -1,6 +1,11 @@
-package com.example.alex.alphabet;
+/**
+ * Created by alex on 5/25/17.
+ */
+
+package com.example.alex.myalphabet;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,31 +14,32 @@ import android.widget.TextView;
 
 
 
-
-/**
- * Created by alex on 5/24/17.
- */
-
 public class AlphabetAdapter extends BaseAdapter {
     private Context mContext;
     private String[] mLetters;
-    public AlphabetAdapter (Context context, String[] letters){
+    private Typeface mTypeface;
+
+    public AlphabetAdapter(Context context, String[] letters, Typeface typeface) {
         this.mContext = context;
         this.mLetters = letters;
+        this.mTypeface = typeface;
     }
 
     @Override
     public int getCount() {
         return mLetters.length;
     }
+
     @Override
     public Object getItem(int position) {
         return null;
     }
+
     @Override
     public long getItemId(int position) {
         return 0;
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) mContext
@@ -41,15 +47,21 @@ public class AlphabetAdapter extends BaseAdapter {
         View gridView;
         if (convertView == null) {
             // get layout from xml file
-            gridView = inflater.inflate(R.layout.alphabet_grid_item, null);
+            gridView = inflater.inflate(R.layout.layout, null);
             // pull views
             TextView letterView = (TextView) gridView
                     .findViewById(R.id.grid_item_letter);
-            // set values into views
-            letterView.setText("A");  // using dummy data for now
+            //set values into views
+            letterView.setText("A");
+            letterView.setText(mLetters[position]);
+            letterView.setTypeface(mTypeface);
+
         } else {
             gridView = (View) convertView;
         }
         return gridView;
     }
 }
+
+
+

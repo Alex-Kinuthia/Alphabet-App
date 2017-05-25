@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.alex.alphabet.MainActivity">
+
     <TextView
-        android:text="Learn the Alphabet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Learn the Alphabet"
         android:id="@+id/headerTextView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="30sp" />
+        android:textSize="30sp"/>
+
     <GridView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:columnWidth="50sp"
         android:numColumns="auto_fit"
         android:stretchMode="spacingWidthUniform"
@@ -26,9 +27,6 @@
         android:scrollingCache="false"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="40sp" />
+        android:layout_marginTop="40sp"/>
+
 </RelativeLayout>
-
-
-
